@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import '../Styles/Testimonios.css';
 
+const whatsappNumber = "529984128573";
+const testimoniosCtaMsg = encodeURIComponent("Hola, leí las opiniones de sus clientes y me gustaría recibir información para instalar un sistema de seguridad.");
+
 const testimonios = [
     { nombre: "Carlos Sanchez", comentario: "Excelente servicio y calidad de equipos." },
     { nombre: "Israel Ojeda", comentario: "Muy profesionales, atención de especialistas." },
@@ -70,14 +73,30 @@ const Testimonios: React.FC = () => {
 
                 {/* BOTÓN DE RESEÑA DE GOOGLE */}
                 <div className="google-review-container">
-                    <a 
-                        href="https://g.page/r/Cc8l1C4njd6bEAE/review" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href="https://g.page/r/Cc8l1C4njd6bEAE/review"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="google-review-btn"
                         aria-label="Dejar una reseña en Google"
+                        data-gtm-id="cta-testimonios-google-review"
                     >
                         Dejar una reseña en Google
+                    </a>
+                </div>
+
+                {/* CTA inline - Prueba social */}
+                <div className="seccion-cta-inline">
+                    <p className="seccion-cta-texto">¿Listo para tener tu propio sistema de seguridad? Protégete hoy.</p>
+                    <a
+                        href={`https://wa.me/${whatsappNumber}?text=${testimoniosCtaMsg}`}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        className="seccion-cta-btn"
+                        aria-label="Solicitar instalación de cámaras de seguridad"
+                        data-gtm-id="cta-testimonios-instalacion"
+                    >
+                        🛡️ Solicitar instalación ahora
                     </a>
                 </div>
             </div>

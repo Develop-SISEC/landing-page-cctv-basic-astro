@@ -35,6 +35,7 @@ const Footer: React.FC = () => {
                         <div className="footer-links-column">
                             <a href="#estadisticas">Estadísticas</a>
                             <a href="#testimonios">Testimonios</a>
+                            <a href="/blog/">Nuestro Blog</a>
                             <a href="#partners">Partners</a>
                             <a href="#faq">Preguntas Frecuentes</a>
                             <a href="#contacto">Contacto</a>
@@ -52,13 +53,13 @@ const Footer: React.FC = () => {
                     <div className="contacto-item">
                         <img src={CorreoIcon.src} alt="" aria-hidden="true" className="contacto-icon" />
                         <p>
-                            <a href="mailto:ventas@gruposaom.com.mx">ventas@gruposaom.com.mx</a>
+                            <a href="mailto:ventas@gruposaom.com.mx" data-gtm-id="cta-footer-email">ventas@gruposaom.com.mx</a>
                         </p>
                     </div>
                     <div className="contacto-item">
                         <img src={TelefonoIcon.src} alt="" aria-hidden="true" className="contacto-icon" />
                         <p>
-                            <a href="tel:+529989148930">+52 998 914 8930</a>
+                            <a href="tel:+529989148930" data-gtm-id="cta-footer-telefono">+52 998 914 8930</a>
                         </p>
                     </div>
                 </div>

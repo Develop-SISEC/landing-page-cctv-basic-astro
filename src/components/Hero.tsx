@@ -33,6 +33,7 @@ const Hero: React.FC = () => {
     { name: "Beneficios", id: "beneficios" },
     { name: "Sectores", id: "sectores" },
     { name: "Cámaras", id: "productos" },
+    { name: "Blog", url: "/blog/" },
     { name: "Contacto", id: "cta" },
   ];
 
@@ -52,14 +53,20 @@ const Hero: React.FC = () => {
 
         <nav className="hero-nav" aria-label="Menú de navegación">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className="nav-link-btn"
-              type="button"
-            >
-              {item.name}
-            </button>
+            'url' in item ? (
+              <a href={item.url} key={item.name} className="nav-link-btn">
+                {item.name}
+              </a>
+            ) : (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="nav-link-btn"
+                type="button"
+              >
+                {item.name}
+              </button>
+            )
           ))}
         </nav>
 
@@ -83,13 +90,23 @@ const Hero: React.FC = () => {
         {menuOpen && (
           <div className="mobile-menu">
             {navItems.map((item) => (
-              <button
-                key={`${item.id}-mobile`}
-                onClick={() => scrollToSection(item.id)}
-                type="button"
-              >
-                {item.name}
-              </button>
+              'url' in item ? (
+                <a
+                  key={`${item.name}-mobile`}
+                  href={item.url}
+                  className="mobile-nav-link"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <button
+                  key={`${item.id}-mobile`}
+                  onClick={() => scrollToSection(item.id)}
+                  type="button"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </div>
         )}
@@ -124,6 +141,7 @@ const Hero: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="hero-button"
+            data-gtm-id="cta-hero-asesoria"
           >
             Solicita tu asesoría
           </a>

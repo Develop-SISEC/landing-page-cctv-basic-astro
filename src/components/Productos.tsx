@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Styles/Productos.css';
 
+const whatsappNumber = "529984128573";
+const productosCtaMsg = encodeURIComponent("Hola, me gustaría recibir una asesoría para elegir la cámara de seguridad ideal para mi espacio.");
+
 // Imágenes de las cámaras
 import interiores from '../assets/images/interores.webp';
 import exteriores from '../assets/images/exteriores.webp';
@@ -107,6 +110,21 @@ const Productos: React.FC = () => {
                         </div>
                     </article>
                 ))}
+            </div>
+
+            {/* CTA inline - Alta intención de compra */}
+            <div className="seccion-cta-inline">
+                <p className="seccion-cta-texto">¿No sabes cuál cámara necesitas? Nuestros expertos te orientan sin costo.</p>
+                <a
+                    href={`https://wa.me/${whatsappNumber}?text=${productosCtaMsg}`}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    className="seccion-cta-btn"
+                    aria-label="Solicitar asesoría gratuita por WhatsApp"
+                    data-gtm-id="cta-productos-asesoria"
+                >
+                    🎯 Recibir asesoría gratuita
+                </a>
             </div>
         </section>
     );

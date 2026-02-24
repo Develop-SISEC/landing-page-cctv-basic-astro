@@ -10,7 +10,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
 
 const BotonWhatsApp: React.FC = () => {
   return (
-    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="boton-whatsapp">
+    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="boton-whatsapp" data-gtm-id="cta-flotante-whatsapp">
       <span className="tooltip-text">Chatea con nosotros</span>
       <img src={whatsappIcon.src} alt="WhatsApp - Grupo SAOM" />
     </a>

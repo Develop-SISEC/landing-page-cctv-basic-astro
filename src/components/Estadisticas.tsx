@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Estadisticas.css";
 
+const whatsappNumber = "529984128573";
+const estadisticasCtaMsg = encodeURIComponent("Hola, me gustaría unirme a sus más de 2,000 clientes satisfechos. ¿Podrían contactarme para recibir más información?");
+
 const estadisticas = [
   { numeroFinal: 2000, descripcion: "Clientes Satisfechos" },
   { numeroFinal: 35, descripcion: "Años de Experiencia en Seguridad" },
@@ -59,6 +62,21 @@ const Estadisticas: React.FC = () => {
               <p className="estadistica-descripcion">{item.descripcion}</p>
             </div>
           ))}
+        </div>
+
+        {/* CTA inline - Credibilidad alta */}
+        <div className="seccion-cta-inline">
+          <p className="seccion-cta-texto">Más de 2,000 clientes ya confían en nosotros. ¿Te unirás al equipo?</p>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${estadisticasCtaMsg}`}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="seccion-cta-btn"
+            aria-label="Contactar a Grupo SAOM por WhatsApp"
+            data-gtm-id="cta-estadisticas-cliente"
+          >
+            ⭐ Quiero ser su próximo cliente
+          </a>
         </div>
       </div>
     </section>

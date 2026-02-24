@@ -58,6 +58,7 @@
   filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
+
 .hero-logo:hover {
   transform: scale(1.05);
 }
@@ -67,9 +68,10 @@
   display: flex;
 }
 
-/* Botones nav */
+/* Botones nav y enlaces */
 .nav-link-btn,
-.mobile-menu button {
+.mobile-menu button,
+.mobile-nav-link {
   background: none;
   border: none;
   color: #fff;
@@ -77,12 +79,17 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-link-btn {
   margin: 0 15px;
   font-size: 1rem;
 }
+
 .nav-link-btn:hover {
   color: #fa3636;
 }
@@ -124,6 +131,7 @@
   text-decoration: none;
   transition: 0.3s;
 }
+
 .hero-button:hover {
   background: #ff0000;
   transform: scale(1.05);
@@ -138,6 +146,7 @@
   border: none;
   cursor: pointer;
 }
+
 .menu-toggle img {
   width: 35px;
   filter: brightness(0) invert(1);
@@ -155,12 +164,15 @@
   z-index: 100;
 }
 
-.mobile-menu button {
+.mobile-menu button,
+.mobile-nav-link {
   padding: 10px;
   width: 100%;
   font-size: 1.1rem;
 }
-.mobile-menu button:hover {
+
+.mobile-menu button:hover,
+.mobile-nav-link:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -171,9 +183,11 @@
   .hero-nav {
     display: none;
   }
+
   .menu-toggle {
     display: block;
   }
+
   .hero-text h1 {
     font-size: 2.5rem;
   }
@@ -190,11 +204,14 @@
 @media (max-width: 600px) {
   .hero-text h1 {
     font-size: 2rem;
-    text-shadow: none; /* ✅ reduce costo de pintura */
+    text-shadow: none;
+    /* ✅ reduce costo de pintura */
   }
+
   .hero-text p {
     font-size: 0.9rem;
   }
+
   .mobile-menu {
     width: 80%;
     right: 10%;
@@ -203,12 +220,14 @@
 
 /* ✅ Si el usuario prefiere menos movimiento (o device lento), evita transiciones */
 @media (prefers-reduced-motion: reduce) {
+
   .hero-logo,
   .hero-button,
   .nav-link-btn,
   .mobile-menu button {
     transition: none !important;
   }
+
   .hero-button:hover {
     transform: none !important;
   }

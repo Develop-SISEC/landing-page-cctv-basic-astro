@@ -1,6 +1,9 @@
 import React from "react";
 import "../Styles/Beneficios.css";
 
+const whatsappNumber = "529984128573";
+const beneficiosCtaMsg = encodeURIComponent("Hola, me interesó conocer más sobre los beneficios de sus cámaras de seguridad. ¿Podrían enviarme más información?");
+
 // ✅ Usaremos rutas desde /public/Beneficios (sin imports)
 // Estructura esperada:
 // public/Beneficios/vanguardia.webp
@@ -68,6 +71,21 @@ const Beneficios: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA inline - Awareness */}
+        <div className="seccion-cta-inline">
+          <p className="seccion-cta-texto">Descubre cómo podemos proteger tu hogar o negocio con tecnología avanzada.</p>
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${beneficiosCtaMsg}`}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className="seccion-cta-btn seccion-cta-outline"
+            aria-label="Ver todos los servicios de Grupo SAOM"
+            data-gtm-id="cta-beneficios-servicios"
+          >
+            🔍 Conocer todos los servicios
+          </a>
         </div>
       </div>
     </section>

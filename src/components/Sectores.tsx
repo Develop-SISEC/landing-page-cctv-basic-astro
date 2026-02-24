@@ -1,6 +1,9 @@
 import React from 'react';
 import '../Styles/Sectores.css';
 
+const whatsappNumber = "529984128573";
+const sectoresCtaMsg = encodeURIComponent("Hola, me interesa conocer las soluciones de seguridad para mi tipo de negocio o propiedad. ¿Podrían asesorarme?");
+
 // Importar imágenes de sectores
 import residencial from '../assets/images/residencia.webp';
 import corporativo from '../assets/images/corporativo.webp';
@@ -39,6 +42,21 @@ const Sectores: React.FC = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* CTA inline - Identificación de sector */}
+                <div className="seccion-cta-inline">
+                    <p className="seccion-cta-texto">Diseñamos la solución exacta para tu sector. Contáctanos y recibe una propuesta personalizada.</p>
+                    <a
+                        href={`https://wa.me/${whatsappNumber}?text=${sectoresCtaMsg}`}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        className="seccion-cta-btn"
+                        aria-label="Solicitar propuesta personalizada de seguridad"
+                        data-gtm-id="cta-sectores-negocio"
+                    >
+                        🏢 Quiero proteger mi negocio
+                    </a>
                 </div>
             </div>
         </section>

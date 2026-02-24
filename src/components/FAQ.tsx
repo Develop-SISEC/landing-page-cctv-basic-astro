@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../Styles/FAQ.css';
 
+const whatsappNumber = "529984128573";
+const faqCtaMsg = encodeURIComponent("¡Hola! Tengo algunas preguntas sobre sus servicios de videovigilancia y me gustaría recibir más información.");
+
 const faqs = [
     {
         pregunta: "¿Quiénes somos en Grupo SAOM?",
@@ -47,9 +50,9 @@ const FAQ: React.FC = () => {
 
                 <div className="faq-list">
                     {faqs.map((faq, index) => (
-                        <div 
-                            key={index} 
-                            className={`faq-item ${activeIndex === index ? 'active' : ''}`} 
+                        <div
+                            key={index}
+                            className={`faq-item ${activeIndex === index ? 'active' : ''}`}
                             onClick={() => toggleFAQ(index)}
                         >
                             <div className="faq-question">
@@ -61,6 +64,21 @@ const FAQ: React.FC = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                {/* CTA inline - Cierre de objeciones */}
+                <div className="seccion-cta-inline seccion-cta-faq">
+                    <p className="seccion-cta-texto">¿Aún tienes dudas? Nuestro equipo resuelve todo en minutos.</p>
+                    <a
+                        href={`https://wa.me/${whatsappNumber}?text=${faqCtaMsg}`}
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                        className="seccion-cta-btn"
+                        aria-label="Contactar por WhatsApp para resolver dudas"
+                        data-gtm-id="cta-faq-experto"
+                    >
+                        💬 Hablar con un experto ahora
+                    </a>
                 </div>
             </div>
         </section>

@@ -16,10 +16,10 @@ const CTA: React.FC = () => {
                     Obtén una asesoría gratuita y descubre cómo proteger tu hogar o negocio con tecnología avanzada.
                 </p>
                 <div className="cta-buttons">
-                    <a href={whatsappContactLink} target="_blank" rel="nofollow noopener noreferrer" className="cta-button whatsapp">
+                    <a href={whatsappContactLink} target="_blank" rel="nofollow noopener noreferrer" className="cta-button whatsapp" data-gtm-id="cta-seccion-whatsapp">
                         Contactar por WhatsApp
                     </a>
-                    <a href={whatsappQuoteLink} target="_blank" rel="nofollow noopener noreferrer" className="cta-button secondary">
+                    <a href={whatsappQuoteLink} target="_blank" rel="nofollow noopener noreferrer" className="cta-button secondary" data-gtm-id="cta-seccion-cotizacion">
                         Solicitar Cotización
                     </a>
                 </div>
