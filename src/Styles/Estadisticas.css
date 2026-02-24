@@ -1,0 +1,129 @@
+/* =============================== */
+/* SECCIÓN ESTADÍSTICAS MEJORADA */
+/* =============================== */
+
+.estadisticas {
+  padding: 80px 5%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+/* Contenedor */
+.estadisticas-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =============================== */
+/* TEXTOS */
+/* =============================== */
+
+.estadisticas-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.estadisticas-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* =============================== */
+/* GRID DE ESTADÍSTICAS */
+/* =============================== */
+
+.estadisticas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+/* =============================== */
+/* TARJETAS INDIVIDUALES */
+/* =============================== */
+
+.estadistica-item {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(5px);
+  opacity: 0;
+}
+
+/* Animación de aparición */
+.estadistica-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover en números */
+.estadistica-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* =============================== */
+/* NÚMEROS */
+/* =============================== */
+
+.estadistica-numero {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #004aad;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPCIÓN */
+.estadistica-descripcion {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* =============================== */
+/* RESPONSIVIDAD */
+/* =============================== */
+
+@media (max-width: 900px) {
+  .estadisticas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .estadistica-numero {
+    font-size: 2.5rem;
+  }
+
+  .estadistica-descripcion {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .estadisticas-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .estadistica-numero {
+    font-size: 2rem;
+  }
+
+  .estadistica-descripcion {
+    font-size: 0.9rem;
+  }
+}

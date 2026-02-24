@@ -1,0 +1,158 @@
+/* =============================== */
+/* SECCIÓN SECTORES MEJORADA */
+/* =============================== */
+
+.sectores {
+    width: 100%;
+    padding: 60px 5%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.sectores-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TÍTULO PRINCIPAL */
+.sectores-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* SUBTÍTULO */
+.sectores-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* =============================== */
+/* GRID DE SECTORES 2x3 */
+/* =============================== */
+
+.sectores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Espacio reducido entre tarjetas */
+    justify-content: center;
+}
+
+/* TARJETAS CON IMAGEN DE FONDO Y EFECTO OSCURO */
+.sector-card {
+    position: relative;
+    height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* IMAGEN DE FONDO */
+.sector-imagen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(0.6);
+    transition: filter 0.3s ease;
+}
+
+/* EFECTO HOVER PARA ACLARAR MÁS LA IMAGEN */
+.sector-card:hover .sector-imagen {
+    filter: brightness(0.8);
+}
+
+/* CAPA OSCURA CON TEXTO */
+.sector-overlay {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease;
+}
+
+/* EFECTO EN HOVER */
+.sector-card:hover .sector-overlay {
+    background: rgba(45, 45, 45, 0.3);
+}
+
+/* TEXTOS */
+.sector-nombre {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.sector-descripcion {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* EFECTO FADE-IN ANIMACIÓN */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============================== */
+/* RESPONSIVIDAD */
+/* =============================== */
+
+@media (max-width: 900px) {
+    .sectores-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .sector-card {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sectores-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .sector-card {
+        height: 200px;
+    }
+
+    .sector-nombre {
+        font-size: 1.4rem;
+    }
+
+    .sector-descripcion {
+        font-size: 0.9rem;
+    }
+}

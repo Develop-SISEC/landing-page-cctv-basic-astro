@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.tsx';
+import BotonWhatsApp from '../components/BotonWhatsApp.tsx';
+import Beneficios from '../components/Beneficios.tsx';
+import Productos from '../components/Productos.tsx';
+import Clientes from '../components/Clientes.tsx';
+import Testimonios from '../components/Testimonios.tsx';
+import Sectores from '../components/Sectores.tsx';
+import Estadisticas from '../components/Estadisticas.tsx';
+import Partners from '../components/Partners.tsx';
+import CTA from '../components/CTA.tsx';
+import FAQ from '../components/FAQ.tsx';
+import Footer from '../components/Footer.tsx';
+
+// Use global CSS styles
+import '../index.css';
+---
+
+<Layout>
+  <BotonWhatsApp client:idle />
+  <header>
+    <Hero client:load />
+  </header>
+  <main>
+    <section id="beneficios">
+      <Beneficios client:visible />
+    </section>
+
+    <!-- Sección de Productos/Servicios -->
+    <section id="productos">
+      <Productos />
+    </section>
+
+    <!-- Sección de Sectores -->
+    <section id="sectores">
+      <Sectores client:visible />
+    </section>
+
+    <!-- Sección de Estadísticas -->
+    <section id="estadisticas">
+      <Estadisticas client:visible />
+    </section>
+
+    <!-- Sección de Partners -->
+    <section id="partners">
+      <Partners />
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta">
+      <CTA />
+    </section>
+
+    <!-- Sección de Clientes -->
+    <section id="clientes">
+      <Clientes client:visible />
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios">
+      <Testimonios client:visible />
+    </section>
+
+    <!-- Sección de Preguntas Frecuentes -->
+    <section id="faq">
+      <FAQ client:visible />
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <Footer />
+  </footer>
+</Layout>

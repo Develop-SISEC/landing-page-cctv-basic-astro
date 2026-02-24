@@ -1,0 +1,225 @@
+.testimonios {
+    width: 100%;
+    padding: 50px 5%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.testimonios-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonios-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+/* SUBTÍTULO */
+.testimonios-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* 🔹 Grid Responsivo de Testimonios */
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* TARJETA DE TESTIMONIO */
+.testimonio-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonio-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔹 Encabezado con icono de perfil y nombre */
+.testimonio-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* 🔹 Iconos de Perfil con Color Fijo */
+.perfil-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Colores Fijos */
+.perfil-azul {
+    background-color: #007BFF;
+}
+
+.perfil-naranja {
+    background-color: #FF5733;
+}
+
+.perfil-morado {
+    background-color: #A133FF;
+}
+
+.perfil-rojo {
+    background-color: #FF3333;
+}
+
+/* Estrellas de calificación */
+.testimonio-stars {
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-bottom: 8px;
+}
+
+.testimonio-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.ver-mas {
+    border: none;
+    background: none;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.ver-mas:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Mejor Responsividad */
+@media (max-width: 1200px) {
+    .testimonios-title {
+        font-size: 2rem;
+    }
+    .testimonios-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonios-title {
+        font-size: 1.8rem;
+    }
+
+    .testimonios-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .testimonios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .perfil-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonios-title {
+        font-size: 1.6rem;
+    }
+
+    .testimonios-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .perfil-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .testimonio-text {
+        font-size: 0.9rem;
+    }
+
+    .ver-mas {
+        font-size: 0.8rem;
+    }
+}
+
+.google-review-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.google-review-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #ffffff;
+    color: #4285F4; /* Azul de Google */
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid #4285F4;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-review-btn:hover {
+    background-color: #4285F4;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(66, 133, 244, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Responsividad para el botón */
+@media (max-width: 600px) {
+    .google-review-btn {
+        width: 90%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}

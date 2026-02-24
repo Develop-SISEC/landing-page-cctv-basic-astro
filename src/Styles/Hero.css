@@ -1,0 +1,215 @@
+/* Hero.css */
+
+/* =============================== */
+/* CONFIGURACIÓN BASE Y HERO */
+/* =============================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+
+  /* Mantén el diseño en desktop */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.hero-picture,
+.hero-bg,
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg {
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* =============================== */
+/* HEADER Y NAVEGACIÓN */
+/* =============================== */
+.hero-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.hero-logo {
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.hero-logo:hover {
+  transform: scale(1.05);
+}
+
+.hero-nav,
+.mobile-menu {
+  display: flex;
+}
+
+/* Botones nav */
+.nav-link-btn,
+.mobile-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-link-btn {
+  margin: 0 15px;
+  font-size: 1rem;
+}
+.nav-link-btn:hover {
+  color: #fa3636;
+}
+
+/* =============================== */
+/* TEXTO Y BOTÓN PRINCIPAL */
+/* =============================== */
+.hero-text {
+  z-index: 2;
+  color: white;
+
+  /* ✅ Importante: evitamos animación por defecto (esto ayuda al LCP) */
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h2 {
+  font-size: 1.8rem;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #fa3636;
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.hero-button:hover {
+  background: #ff0000;
+  transform: scale(1.05);
+}
+
+/* =============================== */
+/* MENÚ MÓVIL Y RESPONSIVO */
+/* =============================== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle img {
+  width: 35px;
+  filter: brightness(0) invert(1);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 60px;
+  right: 5%;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  flex-direction: column;
+  width: 200px;
+  z-index: 100;
+}
+
+.mobile-menu button {
+  padding: 10px;
+  width: 100%;
+  font-size: 1.1rem;
+}
+.mobile-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =============================== */
+/* MEDIA QUERIES */
+/* =============================== */
+@media (max-width: 900px) {
+  .hero-nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ✅ En móvil quitamos clip-path (caro) y reducimos costo visual */
+@media (max-width: 768px) {
+  .hero {
+    clip-path: none;
+  }
+}
+
+/* Extra móvil */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 2rem;
+    text-shadow: none; /* ✅ reduce costo de pintura */
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+  .mobile-menu {
+    width: 80%;
+    right: 10%;
+  }
+}
+
+/* ✅ Si el usuario prefiere menos movimiento (o device lento), evita transiciones */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo,
+  .hero-button,
+  .nav-link-btn,
+  .mobile-menu button {
+    transition: none !important;
+  }
+  .hero-button:hover {
+    transform: none !important;
+  }
+}
